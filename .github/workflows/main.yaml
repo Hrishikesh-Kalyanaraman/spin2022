@@ -19,14 +19,13 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: "main"
+          ref: "solution"
       
       # Install prerequisite libraries for einstein toolkit
       - name: Install pre-requisite libraries
         run:  |
           sudo apt update
           sudo apt-get install -y python3-pygit2
-          sudo apt-get install -y python3
 
       # create a demo website
       - name: Create HTML file
@@ -45,4 +44,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: "main"
+          branch: "solution"
